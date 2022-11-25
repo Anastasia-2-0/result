@@ -3,9 +3,15 @@ int size = int.Parse(Console.ReadLine());
 
 string[] arrayFirst = new string[size];
 string[] arraySecond = new string[arrayFirst.Length];
+
 FillArray(arrayFirst);
 Console.Write("Ваш массив: ");
 PrintArray(arrayFirst);
+
+Console.WriteLine();
+Console.Write("преобразованные массив -> ");
+ConvertArray(arrayFirst, arraySecond);
+PrintArray(arraySecond);
 
 void FillArray(string[] array)
 {
@@ -24,4 +30,17 @@ void PrintArray(string[] array)
         Console.Write(array[i] + " ");
     }
     Console.WriteLine();
+}
+
+void ConvertArray(string[] arrayFirst, string[] arraySecond)
+{
+    int count = 0;
+    for (int i = 0; i < arrayFirst.Length; i++)
+    {
+    if(arrayFirst[i].Length <= 3)
+        {
+        arraySecond[count] = arrayFirst[i];
+        count++;
+        }
+    }
 }
